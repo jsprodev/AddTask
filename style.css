@@ -12,7 +12,7 @@
     height: calc(1.9rem + 1px) !important;
     border: 1px solid #ced4da !important;
 }
-input#datepicker, input#timepicker {
+input#Date, input#Time {
     padding: 0px 7px;
 }
 .sp-replacer.sp-light {
@@ -20,4 +20,7 @@ input#datepicker, input#timepicker {
     border-radius: 4px;
     background: #fff !important; 
     padding: 4px 10px 0px;
+}
+i, span {
+   cursor: pointer; 
 }
