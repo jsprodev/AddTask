@@ -40,7 +40,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-small">Date</span>
                         </div>
-                        <input type="date"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="date">
+                        <!-- <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="09-01-2013" > -->
                     </div>
             </div>
             <div class="col-lg-3">
@@ -48,7 +48,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-small">Time</span>
                     </div>
-                    <input type="time"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="time">
+                    <!-- <input type="time"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="time"> -->
+                    <input class="form-control" type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="datetime">
                 </div>
             </div>
             <div class="col-lg-2">
@@ -82,11 +83,6 @@
             </div>
         </div>
 
-        <a href="#" id="dob" data-type="combodate" data-pk="1"  data-value="2018-05-15" data-title="Select date"></a>
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -101,5 +97,7 @@
     <!-- <script src='/js/jquery.datetimepicker.full.min.js'></script> -->
     <script src='/js/spectrum.js'></script>
     <script src="/js/script.js"></script>
+
+
 </body>
 </html>

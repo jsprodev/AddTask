@@ -22,18 +22,13 @@ $(function () {
 
   });
 
-  $('#dob').editable({
-    mode: 'inline',
-    format: 'YYYY-MM-DD',    
-    viewformat: 'DD.MM.YYYY',    
-    template: 'D / MMMM / YYYY',    
-    combodate: {
-            minYear: 2000,
-            maxYear: 2030,
-            minuteStep: 1
-       }
+  $(function(){
+    $('#time').combodate({
+        firstItem: 'name', //show 'hour' and 'minute' string at first item of dropdown
+        minuteStep: 1
+    });  
   });
-  
+
 
 
 });
