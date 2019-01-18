@@ -32,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-small">Title</span>
                         </div>
-                        <input type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="title">
+                        <input type="text" class="form-control" id="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small">
                     </div>
             </div>
             <div class="col-lg-3">
@@ -40,7 +40,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-small">Date</span>
                         </div>
-                        <input type="date"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="date">
+                        <input type="text" class="form-control" id="date" data-format="DD-MMM-YYYY" data-template="DD MMM YYYY" name="date" value="07-Jan-2019">
                     </div>
             </div>
             <div class="col-lg-3">
@@ -48,7 +48,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-small">Time</span>
                     </div>
-                    <input type="time"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="time">
+                    <input type="text" class="form-control" id="time" data-format="hh:mm a" data-template="hhmma" name="datetime"  value="05:30 pm">
                 </div>
             </div>
             <div class="col-lg-2">
@@ -56,7 +56,7 @@
                     <div class="input-group-prepend" >
                         <span class="input-group-text" id="inputGroup-sizing-small">Color</span>
                     </div>
-                    <input type="text" value="#007bff" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="color"/>
+                    <input type="text" class="form-control" id="color"  value="#007bff" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" />
                 </div>
             </div>
             <div class="col-lg-1">
@@ -82,7 +82,6 @@
             </div>
         </div>
 
-        <a href="#" id="dob" data-type="combodate" data-pk="1"  data-value="2018-05-15" data-title="Select date"></a>
 
 
 

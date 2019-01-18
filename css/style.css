@@ -3,12 +3,6 @@
     margin-top: 30px;
 }
 
-.glyphicon-ok:before {
-    content: "\f00c";
-}
-.glyphicon-remove:before {
-    content: "\f00d";
-}
 .glyphicon {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome !important;
@@ -16,4 +10,27 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-ok:before {
+    content: "\f00c";
+}
+
+.glyphicon-remove:before {
+    content: "\f00d";
+}
+
+select {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.8125rem + 2px);
+    /* padding: .25rem .5rem; */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
