@@ -20,68 +20,62 @@
     <div class="container mt-30">
 
         <div class="row"> 
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <h2>Add Task</h2>
             </div>  
         </div>
 
         <div class="row">
-            <!-- <input type="hidden" id="ID"/> -->
-            <div class="col-lg-3">
+            <!-- <form class="form-inline" name="form" id="form" action="#"> -->
+                <input type="hidden" id="ID"/>
+                <div class="col-lg-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-small">Title</span>
+                            </div>
+                            <input required type="text" class="form-control" id="title" name="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small">
+                        </div>
+                </div>
+                <div class="col-lg-3">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-small">Date</span>
+                            </div>
+                            <input required type="text" class="form-control" id="date" data-format="DD-MMM-YYYY" data-template="DD MMM YYYY" name="date" value="07-Jan-2019">
+                        </div>
+                </div>
+                <div class="col-lg-3">
                     <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-small">Title</span>
+                            <span class="input-group-text" id="inputGroup-sizing-small">Time</span>
                         </div>
-                        <input type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="title">
+                        <input required type="text" class="form-control" id="time" data-format="hh:mm a" data-template="hhmma" name="datetime"  value="05:30 pm">
                     </div>
-            </div>
-            <div class="col-lg-3">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-small">Date</span>
+                </div>
+                <div class="col-lg-2">
+                    <div class="input-group input-group-sm mb-3 colorpicker-component">
+                        <div class="input-group-prepend" >
+                            <span class="input-group-text" id="inputGroup-sizing-small">Color</span>
                         </div>
-                        <!-- <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="09-01-2013" > -->
+                        <input required type="text" class="form-control" id="color"  value="#007bff" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" />
                     </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-small">Time</span>
-                    </div>
-                    <!-- <input type="time"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="time"> -->
-                    <input class="form-control" type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="datetime">
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="input-group input-group-sm mb-3 colorpicker-component">
-                    <div class="input-group-prepend" >
-                        <span class="input-group-text" id="inputGroup-sizing-small">Color</span>
-                    </div>
-                    <input type="text" value="#007bff" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-small" id="color"/>
+                <div class="col-lg-1">
+                    <button type="submit" class="btn btn-sm btn-primary mb-3" id="btnSave">Add New Task</button>
                 </div>
-            </div>
-            <div class="col-lg-1">
-                <button class="btn btn-sm btn-primary" id="btnSave">Add New Task</button>
-            </div>
+        <!-- </form> -->
         </div>
 
-        <div class="col-lg-6">
-            <div class="row"> 
-                <div class="col-lg-6 mt-30">
-                    <h2>Listing</h2>
-                </div>  
-            </div>
+        <div class="row"> 
+            <div class="col-lg-6 mt-30">
+                <h2>Listing</h2>
+            </div>  
         </div>
 
+        <div class="row" id="taskListing"></div>
 
-        <div class="col-lg-6">
-            <div class="row"> 
-                <div class="listing">
-                    <ul id="taskListing">
-                    </ul>
-                </div>
-            </div>
         </div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
