@@ -39,6 +39,7 @@ select {
     margin: 0px 0px 25px 0px;
 }
 
-.tasks-actions {
+.tasks-actions a {
     cursor: pointer;
+    font-size: 12px !important;
 }

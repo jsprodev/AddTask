@@ -12,10 +12,10 @@ $(function(){
     let arr = [title, date, time];
     tasks.push(arr);
     console.log(tasks);
-    $('#taskListing').append('<div class="col-sm-3">' +
+    $('#taskListing').append('<div class="col-sm-3 lol">' +
                                 '<div class="card">' +
                                   '<div class="card-header">' +
-                                    '<a class="e-title" data-type="text">' + title + '</a><span class="tasks-actions float-right"><a class=" task-actions-edit" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy"></i></a> <a id="del" class="task-actions-delete" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a></span>' +
+                                    '<a class="e-title" data-type="text">' + title + '</a><span class="task-actions float-right"><a data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a><a data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash task-actions-delete"></i></a></span>' +
                                   '</div>' +
                                   '<ul class="list-group list-group-flush">' +
                                     '<li class="list-group-item"><a class="e-date" data-type="combodate" data-format="DD-MMM-YYYY" data-template="DD MMM YYYY">' + date + '</a></li>' +
@@ -27,14 +27,13 @@ $(function(){
 
     });
                  
-    
-    let del = document.getElementsByClassName('task-actions-delete')
-    var myFunction = function() {
-      alert('hi');
-   };
-    for (let i = 0; i < del.length; i++) {
-      del[i].addEventListener('click', myFunction, false);
-    }
+    document.querySelector('#taskListing').addEventListener('click', function(event) {
+      if (event.target.classList.contains('task-actions-delete')) {
+        alert('hi');
+        console.log('hi');
+      }
+    });
+
 
   function editable() {
     $('.e-title').editable({
