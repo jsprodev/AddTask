@@ -1,23 +1,9 @@
+body {
+    font-size: 14px;
+}
 
 .mt-30 {
     margin-top: 30px;
-}
-
-.glyphicon {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome !important;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.glyphicon-ok:before {
-    content: "\f00c";
-}
-
-.glyphicon-remove:before {
-    content: "\f00d";
 }
 
 select {
@@ -39,7 +25,38 @@ select {
     margin: 0px 0px 25px 0px;
 }
 
-.tasks-actions a {
-    cursor: pointer;
-    font-size: 12px !important;
+a.task-actions {
+    padding: 5px;
+    cursor: pointer !important;
+}
+
+a.e-title {
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.glyphicon {
+    font-family: "Font Awesome 5 Free";
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: all-petite-caps;
+    text-rendering: auto;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.glyphicon-ok:before {
+    content: "\f00c" !important;
+    
+}
+
+.glyphicon-remove:before {
+    content: "\f00d" !important;
+}
+
+.form-control {
+    font-size: 14px;
+    line-height: 1;
 }
