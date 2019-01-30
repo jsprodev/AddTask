@@ -37,7 +37,7 @@ $(function() {
                  
     document.querySelector('#taskListing').addEventListener('click', function(e) {
       if (event.target.classList.contains('task-actions-delete')) {
-      
+        
       }
     });
 
