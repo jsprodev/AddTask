@@ -2,6 +2,7 @@
 $(function() {
 
   $('[data-toggle="tooltip"]').tooltip();
+  $.fn.editable.defaults.mode = 'inline';
   
   let tasks = [];
   let id = 0;
@@ -15,17 +16,18 @@ $(function() {
       let obj = {"id": id, "title": title, "date": date, "time": time};
       tasks.push(obj);
       let html = '<div class="col-sm-4">' +
-                    '<div class="card" id="task-%id%">' +
+                    '<div class="card" id="task-' + id +'">' +
                       '<div class="card-header">' +
-                        '<a class="e-title" data-type="text">' + title + '</a><span class="float-right"><a class="task-actions" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a><a class="task-actions" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash task-actions-delete"></i></a></span>' +
+                        '<a class="e-title e-editable" data-type="text" data-pk="' + id + '" >' + title + '</a><span class="float-right"><a class="inline-edit task-actions" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a><a class="task-actions" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash task-actions-delete"></i></a></span>' +
                       '</div>' +
                       '<ul class="list-group list-group-flush">' +
-                        '<li class="list-group-item"><a class="e-date" data-type="combodate" data-format="DD-MMM-YYYY" data-template="DD MMM YYYY">' + date + '</a></li>' +
-                        '<li class="list-group-item"><a class="e-time" data-type="combodate" data-format="hh:mm a" data-template="hh mm a">' + time + '</a></li>' +
+                        '<li class="list-group-item"><a class="e-date e-editable" data-type="combodate" data-format="DD-MMM-YYYY" data-template="DD MMM YYYY">' + date + '</a></li>' +
+                        '<li class="list-group-item"><a class="e-time e-editable" data-type="combodate" data-format="hh:mm a" data-template="hh mm a">' + time + '</a></li>' +
                       '</ul>' +
                     '</div>' +
                   '</div>';
-      let newHtml = html.replace('%id%', id);
+      
+      newHtml = html;
       // $('#taskListing').append(newHtml);
       document.querySelector('#taskListing').insertAdjacentHTML('beforeend', newHtml);
       $('#title').val('');
@@ -59,27 +61,32 @@ $(function() {
       }
     });
 
-    // edit task
-    document.querySelector('#taskListing').addEventListener('click', function(e) {
-      if (e.target.classList.contains('task-actions-edit')) {
-        $('.e-title').editable({
-          mode: 'inline'
-        });
-        $('.e-date').editable({
-          mode: 'inline'
-        });
-        $('.e-time').editable({
-          mode: 'inline'
-        });
-      }
+    // make tasks editable 
+    $('body').on('click', '.inline-edit', function(e){ 
+      
+      var id = $(this).data('id');
 
-      // save edit values
-      let title = $('#title').val();
-      let date = $('#date').val();
-      let time = $('#time').val();
+      $('#task-' + id + ' .e-editable').each((i, el) => {
+        if($(el).hasClass('editable')){
+          $(el).toggleClass('editable editable-click');
+          $(el).editable('destroy');
+          return;
+        }
 
-      console.log(title);
+        $(el).editable();
+      });
     });
+
+    function updateTaskArray(id) {
+      let title = $('.e-title').val();
+      let date = $('.e-date').val();
+      let time = $('.e-time').val();
+      console.log(id + ' ' + title + '' + date + ' ' + time)
+    }
+
+    // document.querySelector('.editable-submit').addEventListener('click', function(e) {
+
+    // });
 
     $(function(){
       $('#date').combodate({
