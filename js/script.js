@@ -40,7 +40,11 @@ $(function() {
       let html = '<div class="col-sm-4">' +
                     '<div class="card" id="task-' + id +'"  style="background-color: ' + color + ' ">' +
                       '<div class="card-header">' +
-                        '<a class="e-title e-editable" data-type="text" data-pk="' + id + '" >' + title + '</a><span class="float-right"><a class="inline-edit task-actions" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a><a class="task-actions" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash task-actions-delete"></i></a></span>' +
+                        '<a class="e-title e-editable" data-type="text" data-pk="' + id + '" >' + title + '</a>' +
+                          '<span class="float-right">' +
+                            '<a class="task-actions inline-edit" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a>' +
+                            '<a class="task-actions task-actions-delete" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>' +
+                          '</span>' +
                       '</div>' +
                       '<ul class="list-group list-group-flush">' +
                         '<li class="list-group-item"><a class="e-date e-editable" data-type="combodate" data-format="DD-MMM-YYYY" data-template="DDMMMYYYY" >' + date + '</a></li>' +
