@@ -6,6 +6,14 @@ body {
     margin-top: 30px;
 }
 
+a {
+    color: inherit;
+}
+
+.editable-unsaved {
+    font-weight: inherit;
+}
+
 select {
     display: inline-block;
     width: 100%;
