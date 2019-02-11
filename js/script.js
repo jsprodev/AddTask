@@ -1,5 +1,6 @@
+$(function(){
 
-$(function() {
+  let tasks = [];
 
   // initialize date
   $('#date').combodate({
@@ -24,7 +25,6 @@ $(function() {
     showInput: true
   });
   
-  let tasks = [];
   let id = 0;
   
   $('#btnSave').on('click', function(){
@@ -40,7 +40,7 @@ $(function() {
       let html = '<div class="col-sm-4">' +
                     '<div class="card" id="task-' + id +'"  style="background-color: ' + color + ' ">' +
                       '<div class="card-header">' +
-                        '<a href="/task-details.html" class="e-title e-editable" data-type="text" data-pk="' + id + '" >' + title + '</a>' +
+                        '<a  class="task-detail e-title e-editable" data-type="text" data-pk="' + id + '" >' + title + '</a>' +
                           '<span class="float-right">' +
                             '<a class="task-actions inline-edit" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-fancy task-actions-edit"></i></a>' +
                             '<a class="task-actions task-actions-delete" data-id="' + id + '" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>' +
@@ -52,7 +52,7 @@ $(function() {
                       '</ul>' +
                     '</div>' +
                   '</div>';
-      
+                  
       // $('#taskListing').append(newHtml);
       document.querySelector('#taskListing').insertAdjacentHTML('beforeend', html);
       $('#title').val('');
@@ -108,4 +108,4 @@ $(function() {
       });
     });
 
-})
+});
